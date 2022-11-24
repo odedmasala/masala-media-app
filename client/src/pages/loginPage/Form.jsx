@@ -57,14 +57,9 @@ const Form = () => {
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
-      console.log(formData.getAll());
-
     }
-    console.log(formData);
-
     formData.append("picturePath", values.picture.name);
-    console.log(formData);
-    const savedUserResponse = await fetch("http://localhost:8001/auth/register", {
+    const savedUserResponse = await fetch(`/auth/register`, {
       method: "POST",
       body: formData,
     });
@@ -77,7 +72,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:8001/auth/login", {
+    const loggedInResponse = await fetch("/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
