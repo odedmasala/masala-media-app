@@ -17,7 +17,7 @@ import { createPost } from "./controllers/posts.js";
 // import User from "./models/User.js";
 // import Post from "./models/Post.js";
 // import { users, posts } from "./data/index.js";
-const app = express();
+ const app = express();
 dotenv.config();
 
 /* MONGOOSE SETUP */
@@ -66,9 +66,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
 
-/* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
   app.listen(PORT, () => {
     connect();
     console.log(`connect to backend at URL http://localhost:${PORT}/`);
   });
+
+export default app
