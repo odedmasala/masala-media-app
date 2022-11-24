@@ -17,13 +17,25 @@ import { createPost } from "./controllers/posts.js";
 // import User from "./models/User.js";
 // import Post from "./models/Post.js";
 // import { users, posts } from "./data/index.js";
+const app = express();
+dotenv.config();
 
+/* MONGOOSE SETUP */
+const connect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URL,{useNewUrlParser: true,useUnifiedTopology: true});
+    console.log("The DB login was successful");
+  } catch (error) {
+    throw error;
+  }
+};
+mongoose.connection.on("disconnected", () => {
+  console.log("mongo DB disconnected");
+});
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config();
-const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -56,13 +68,7 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
-mongoose
-  .connect(process.env.MONGO_URL,{useNewUrlParser: true,useUnifiedTopology: true})
-  .then(() => {
-    app.listen(PORT, () => console.log(`connect to mongoDB Server Port: ${PORT}`));
-
-    /* ADD DATA ONE TIME */
-    // User.insertMany(users);
-    // Post.insertMany(posts);
-  })
-  .catch((error) => console.log(`${error} did not connect`));
+  app.listen(PORT, () => {
+    connect();
+    console.log(`connect to backend at URL http://localhost:${PORT}/`);
+  });
