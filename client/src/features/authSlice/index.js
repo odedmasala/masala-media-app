@@ -41,6 +41,10 @@ export const authSlice = createSlice({
     },
   },
 });
-export const  selectAuth = (state)=> state.auth
-export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } = authSlice.actions;
+export const selectAllAuth = (state) => state.auth;
+export const selectMode = (state) => state.mode;
+export const selectToken = (state) => state.token;
+export const selectUser = (state) => state.user;
+export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
+  authSlice.actions;
 export default authSlice.reducer;
