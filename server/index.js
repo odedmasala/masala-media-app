@@ -17,13 +17,16 @@ import { createPost } from "./controllers/posts.js";
 // import User from "./models/User.js";
 // import Post from "./models/Post.js";
 // import { users, posts } from "./data/index.js";
- const app = express();
+const app = express();
 dotenv.config();
 
 /* MONGOOSE SETUP */
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL,{useNewUrlParser: true,useUnifiedTopology: true});
+    await mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("The DB login was successful");
   } catch (error) {
     throw error;
@@ -65,11 +68,20 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-
-const PORT = process.env.PORT || 6001;
-  app.listen(PORT, () => {
-    connect();
-    console.log(`connect to backend at URL http://localhost:${PORT}/`);
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "something wrong";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack,
   });
+});
+const PORT = process.env.PORT || 6001;
+app.listen(PORT, () => {
+  connect();
+  console.log(`connect to backend at URL http://localhost:${PORT}/`);
+});
 
-export default app
+export default app;
