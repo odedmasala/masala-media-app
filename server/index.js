@@ -61,7 +61,7 @@ const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
 app.post("/api/auth/register", upload.single("picture"), register);
-app.post("/api/posts", verifyToken, upload.single("picture"), createPost);
+app.post("/api/posts",verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/api/auth", authRoutes);
@@ -78,6 +78,7 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
+
 const PORT = process.env.PORT || 6001;
 app.listen(PORT, () => {
   connect();

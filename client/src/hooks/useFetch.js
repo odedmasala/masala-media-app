@@ -1,50 +1,65 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { selectToken } from "features/authSlice";
 import { useSelector } from "react-redux";
 
-const useFetch = (type, url, body) => {
-  const [data, setData] = useState(null);
+const useFetch = (method, url, body) => {
+  const [fetchData, setFetchData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const token = useSelector(selectToken);
+  const [HeaderRequest, setHeaderRequest] = useState(null);
+  const [isData, setIsData] = useState(false);
 
-  const setHeaderRequest = {
-    method: type,
-    headers: {
-      Authorization: token ? `Bearer ${token}` : null,
-      "Content-Type": "application/json",
-    },
-    body: body ? body : null,
+  const EditHeaderRequest = () => {
+    const newHeaderRequest = {
+      method: method,
+      headers: {
+        Authorization: token ? `Bearer ${token}` : null,
+        "Content-Type": "application/json",
+      },
+      body: body ? body : null,
+    };
+    setHeaderRequest(newHeaderRequest);
   };
-  useEffect(async () => {
-    const fetchData = async (url) => {
+  useEffect(() => {
+    const retchRemoteData = async (url) => {
       setLoading(true);
+      EditHeaderRequest()
       try {
-        const response = await fetch(url, setHeaderRequest);
-        const data = await response.json();
-        setData(data);
-      } catch (e) {
+        const response = await fetch(url, HeaderRequest);
+        const fetchData = await response.json();
+        setFetchData(fetchData);
+        if(fetchData) setIsData(true)
+      } catch (err) {
         setError(err);
+        setIsData(false)
       }
       setLoading(false);
     };
 
-    fetchData(url);
+    retchRemoteData(url);
   }, [url]);
 
   const reFetch = async () => {
     setLoading(true);
+    EditHeaderRequest()
     try {
-      const response = await fetch(url, setHeaderRequest);
-      const data = await response.json();
-      setData(data);
+      const response = await fetch(url, HeaderRequest);
+      const fetchData = await response.json();
+      setFetchData(fetchData);
+      if(fetchData) setIsData(true)
+
     } catch (err) {
       setError(err);
+      setIsData(false)
+
     }
     setLoading(false);
   };
 
-  return { data, loading, error, reFetch };
+
+  return { fetchData, loading,isData, error, reFetch };
 };
 
 export default useFetch;

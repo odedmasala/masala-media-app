@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
+import { createError } from "../utils/error.js";
 
 /* REGISTER USER */
 export const register = async (req, res, next) => {
@@ -46,7 +47,7 @@ export const login = async (req, res, next) => {
     if (!user) return next(createError(400, "User does not exist. "));
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return next(createError(400, "Invalid credentials. "));
+    if (!isMatch) return next(createError(400, "Invalid credentials."));
 
     const token = jwt.sign({ id: user._id }, process.env.JWT);
     delete user.password;
