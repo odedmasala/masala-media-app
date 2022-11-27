@@ -62,7 +62,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     // const savedUser = await useFetch("POST",`/auth/register`,formData)
-    const savedUserResponse = await fetch(`/auth/register`, {
+    const savedUserResponse = await fetch(`https://masala-media.onrender.com/api/auth/register`, {
       method: "POST",
       body: formData,
     });
@@ -80,7 +80,7 @@ const Form = () => {
     //   "/auth/login",
     //   JSON.stringify(values)
     // );
-    const loggedInResponse = await fetch("/auth/login", {
+    const loggedInResponse = await fetch("https://masala-media.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

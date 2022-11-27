@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `/users/${_id}/${friendId}`,
+      `https://masala-media.onrender.com/api/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

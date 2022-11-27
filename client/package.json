@@ -48,6 +48,5 @@
     ]
   },
   "main": "index.js",
-  "license": "MIT",
-  "proxy": "https://masala-media.onrender.com/api"
+  "license": "MIT"
 }

@@ -33,7 +33,7 @@ const PostWidget = ({
   const main = palette.neutral.main;
   const primary = palette.primary.main;
   const patchLike = async () => {
-    const response = await fetch(`/posts/${postId}/like`, {
+    const response = await fetch(`https://masala-media.onrender.com/api/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
