@@ -9,7 +9,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector(selectToken);
 
   const getPosts = async () => {
-    const response = await fetch("/posts", {
+    const response = await fetch("https://masala-media.onrender.com/api/posts", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -27,6 +27,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     );
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
+    console.log(data)
   };
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     } else {
       getPosts();
     }
+    console.log(posts);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
