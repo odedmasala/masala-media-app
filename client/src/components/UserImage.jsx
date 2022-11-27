@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://localhost:8001/assets/${image}`}
+        src={`https://masala-media.onrender.com/assets/${image}`}
       />
     </Box>
   );
