@@ -43,6 +43,7 @@ const initialValuesLogin = {
   email: "",
   password: "",
 };
+
 const Form = () => {
   const [pageType, setPageType] = useState("login");
   const { palette } = useTheme();
@@ -59,7 +60,9 @@ const Form = () => {
       formData.append(value, values[value]);
     }
     formData.append("picturePath", values.picture.name);
-    const savedUserResponse = await fetch(`https://masala-media-app-odedmasala.vercel.app/api/auth/register`, {
+
+    // const savedUser = await useFetch("POST",`/auth/register`,formData)
+    const savedUserResponse = await fetch(`/auth/register`, {
       method: "POST",
       body: formData,
     });
@@ -72,7 +75,12 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://masala-media-app-odedmasala.vercel.app/api/auth/login", {
+    // const { data: loggedIn } = await useFetch(
+    //   "POST",
+    //   "/auth/login",
+    //   JSON.stringify(values)
+    // );
+    const loggedInResponse = await fetch("/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
@@ -93,6 +101,7 @@ const Form = () => {
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
   };
+
   return (
     <Formik
       onSubmit={handleFormSubmit}
