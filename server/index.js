@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import testRoutes from "./routes/testAPI.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
@@ -61,9 +62,10 @@ const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
 app.post("/api/auth/register", upload.single("picture"), register);
-app.post("/api/posts",verifyToken, upload.single("picture"), createPost);
+app.post("/api/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
+app.use("/api/test", testRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
