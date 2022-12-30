@@ -47,17 +47,15 @@ There are always opportunities for improvement in any project. Some possible are
 To get started with Masala Media, you will need to have the following prerequisites installed on your machine:
 
 - Node.js
-- MongoDB
 
 In addition, you will need to have an account with MongoDB Atlas online to host the database for the application.
 
 Once you have these prerequisites installed and an account set up with MongoDB Atlas, you can follow the steps below to set up the application:
 
-1. Clone the repository to your local machine using `git clone https://github.com/[your-username]/masala-media.git`.
+1. Clone the repository to your local machine using `https://github.com/odedmasala/masala-media-app.git`.
 2. Navigate to the root directory of the project and install the dependencies for both the server and client using `npm install` in the `server` and `client` folders respectively.
-3. Start the MongoDB server by running `mongod`.
-4. In a separate terminal, navigate to the root directory of the project and start the application using `npm start`.
-5. The application should now be running on `http://localhost:3000`.
+4. Open a new terminal and split it, in each split terminal run one of the server and client files and run both files and start the application using `npm start`.
+5. The application should now be running on `http://localhost:3000` and the server in `http://localhost:8001` or port you can Choose.
 
 ## Contributing
 
@@ -66,17 +64,3 @@ If you are interested in contributing to the Masala Media project, please follow
 - Fork the repository and create a new branch for your changes.
 - Make your changes and commit them to your branch.
 - Open a pull request and provide a clear and concise description of your changes.
-
-## License
-
-Masala Media is licensed under the [MIT License](LICENSE). This allows for the use and modification of the code for any purpose, as long as the original copyright notice is preserved.
-
-## Acknowledgments
-
-- Material UI: [https://material-ui.com/](https://material-ui.com/)
-- MERN stack: [https://mern.io/](https://mern.io/)
-
-## Contact
-
-If you have any questions or suggestions for the Masala Media project, feel free to contact me via email at [your-email-address] or on social media at [your-social-media-handle]. I am always open to feedback and suggestions for improving the project.
-
