@@ -8,17 +8,19 @@
  
 
 
+# Masala Media - Social Network
+
 Welcome to Masala Media, a social networking platform built using the MERN (MongoDB, Express, React, Node.js) stack and following the MVC (Model-View-Controller) architecture.
 
 ## Project Description
 
 This project was built as a personal learning exercise to gain experience in full-stack web development. The goal was to create a functioning social networking platform with features such as user authentication, posts and comments, and a feed of posts from friends.
 
-To achieve this, the application was built using the MERN stack and following the MVC architecture. This allowed for a separation of concerns between the data (Model), user interface (View), and application logic (Controller).
+To achieve this, the application was built using the MERN stack and following the MVC architecture. This allowed for a separation of concerns between the data (Model), user interface (View), and application logic (Controller). The server is built in a JS file named `server` and is built using the Express.js framework.
 
 ## Notable Features
 
-- User authentication: Users are able to create accounts and log in to the application. This is achieved using JSON Web Tokens for secure authentication.
+- User authentication: Users are able to create accounts and log in to the application using formik and yup for form validation. To access the services on the server, JSON Web Tokens (JWT) are used for secure authentication.
 
 - Posts and comments: Users are able to create posts and leave comments on other users' posts. This allows for the creation of a dynamic feed of content within the application.
 
@@ -34,7 +36,8 @@ There are always opportunities for improvement in any project. Some possible are
 
 - Adding more features: There are many additional features that could be added to the application, such as the ability to send private messages, create groups, or have a more robust profile page.
 
-- Improving performance: The application could be optimized for faster loading times and better overall performance. This could be achieved through techniques such as code optimization and the use of performance-enhancing tools.
+- Improving
+performance: The application could be optimized for faster loading times and better overall performance. This could be achieved through techniques such as code optimization and the use of performance-enhancing tools.
 
 - Adding tests: Adding automated tests to the application would allow for the detection of any issues or regressions as the codebase grows and evolves.
 
@@ -47,7 +50,9 @@ To get started with Masala Media, you will need to have the following prerequisi
 - Node.js
 - MongoDB
 
-Once you have these prerequisites installed, you can follow the steps below to set up the application:
+In addition, you will need to have an account with MongoDB Atlas online to host the database for the application.
+
+Once you have these prerequisites installed and an account set up with MongoDB Atlas, you can follow the steps below to set up the application:
 
 1. Clone the repository to your local machine using `git clone https://github.com/[your-username]/masala-media.git`.
 2. Navigate to the root directory of the project and install the dependencies using `npm install`.
@@ -65,5 +70,13 @@ If you are interested in contributing to the Masala Media project, please follow
 
 ## License
 
-Masala Media is licensed
+Masala Media is licensed under the [MIT License](LICENSE). This allows for the use and modification of the code for any purpose, as long as the original copyright notice is preserved.
 
+## Acknowledgments
+
+- Material UI: [https://material-ui.com/](https://material-ui.com/)
+- MERN stack: [https://mern.io/](https://mern.io/)
+
+## Contact
+
+If you have any questions or suggestions for the Masala Media project,
