@@ -7,7 +7,6 @@
  ## go live production https://masala-media-app.vercel.app/
  
 
-
 # Masala Media - Social Network
 
 Welcome to Masala Media, a social networking platform built using the MERN (MongoDB, Express, React, Node.js) stack and following the MVC (Model-View-Controller) architecture.
@@ -28,7 +27,8 @@ To achieve this, the application was built using the MERN stack and following th
 
 ## Design
 
-The design of the application was created using Material UI, a popular design framework for React applications. This provided a modern and cohesive look and feel throughout the application.
+The design of the application was created using Material UI, a popular
+design framework for React applications. This provided a modern and cohesive look and feel throughout the application.
 
 ## Possible Improvements
 
@@ -36,8 +36,7 @@ There are always opportunities for improvement in any project. Some possible are
 
 - Adding more features: There are many additional features that could be added to the application, such as the ability to send private messages, create groups, or have a more robust profile page.
 
-- Improving
-performance: The application could be optimized for faster loading times and better overall performance. This could be achieved through techniques such as code optimization and the use of performance-enhancing tools.
+- Improving performance: The application could be optimized for faster loading times and better overall performance. This could be achieved through techniques such as code optimization and the use of performance-enhancing tools.
 
 - Adding tests: Adding automated tests to the application would allow for the detection of any issues or regressions as the codebase grows and evolves.
 
@@ -55,7 +54,7 @@ In addition, you will need to have an account with MongoDB Atlas online to host 
 Once you have these prerequisites installed and an account set up with MongoDB Atlas, you can follow the steps below to set up the application:
 
 1. Clone the repository to your local machine using `git clone https://github.com/[your-username]/masala-media.git`.
-2. Navigate to the root directory of the project and install the dependencies using `npm install`.
+2. Navigate to the root directory of the project and install the dependencies for both the server and client using `npm install` in the `server` and `client` folders respectively.
 3. Start the MongoDB server by running `mongod`.
 4. In a separate terminal, navigate to the root directory of the project and start the application using `npm start`.
 5. The application should now be running on `http://localhost:3000`.
@@ -79,4 +78,5 @@ Masala Media is licensed under the [MIT License](LICENSE). This allows for the u
 
 ## Contact
 
-If you have any questions or suggestions for the Masala Media project,
+If you have any questions or suggestions for the Masala Media project, feel free to contact me via email at [your-email-address] or on social media at [your-social-media-handle]. I am always open to feedback and suggestions for improving the project.
+
