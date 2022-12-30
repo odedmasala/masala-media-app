@@ -48,7 +48,7 @@ In addition, you will need to have an account with MongoDB Atlas online to host 
 
 Once you have these prerequisites installed and an account set up with MongoDB Atlas, you can follow the steps below to set up the application:
 
-1. Clone the repository to your local machine using `https://github.com/odedmasala/masala-media-app.git`.
+1. Clone the repository to your local machine using `git clone https://github.com/odedmasala/masala-media-app.git`.
 2. Navigate to the root directory of the project and install the dependencies for both the server and client using `npm install` in the `server` and `client` folders respectively.
 4. Open a new terminal and split it, in each split terminal run one of the server and client files and run both files and start the application using `npm start`.
 5. The application should now be running on `http://localhost:3000` and the server in `http://localhost:8001` or port you can Choose.
