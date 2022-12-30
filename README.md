@@ -1,16 +1,12 @@
 # Masala Media - Social Network
- 
- ![masala-media](https://user-images.githubusercontent.com/105584185/204256264-fbd75a5b-05ae-4b75-a0a3-b2ca06fd9662.png)
-
- 
- 
- ## go live production https://masala-media-app.vercel.app/
- 
-
-# Masala Media - Social Network
 
 Welcome to Masala Media, a social networking platform built using the MERN (MongoDB, Express, React, Node.js) stack and following the MVC (Model-View-Controller) architecture.
+## Screenshot
+ ![masala-media](https://user-images.githubusercontent.com/105584185/204256264-fbd75a5b-05ae-4b75-a0a3-b2ca06fd9662.png)
 
+
+ ## go live production https://masala-media-app.vercel.app/
+ 
 ## Project Description
 
 This project was built as a personal learning exercise to gain experience in full-stack web development. The goal was to create a functioning social networking platform with features such as user authentication, posts and comments, and a feed of posts from friends.
